@@ -1,4 +1,4 @@
-﻿Build started 8/15/2012 2:43:29 AM.
+﻿Build started 8/15/2012 6:59:29 PM.
      1>Project "C:\Users\aws4y\Documents\GitHub\Warp\PSF1\PSF1\PSF1.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\PSF1.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -10,17 +10,10 @@
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\aws4y\Documents\GitHub\Warp\PSF1\Debug\PSF1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\PSF1.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\aws4y\Documents\GitHub\Warp\PSF1\Debug\PSF1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\aws4y\Documents\GitHub\Warp\PSF1\Debug\PSF1.lib" /MACHINE:X86 Debug\PSF1.exe.embed.manifest.res
          Debug\main.obj
-       Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\PSF1.exe.embed.manifest" /manifest Debug\PSF1.exe.intermediate.manifest
-         All outputs are up-to-date.
-       LinkEmbedManifest:
-         All outputs are up-to-date.
-         PSF1.vcxproj -> C:\Users\aws4y\Documents\GitHub\Warp\PSF1\Debug\PSF1.exe
-       FinalizeBuildStatus:
-         Deleting file "Debug\PSF1.unsuccessfulbuild".
-         Touching "Debug\PSF1.lastbuildstate".
-     1>Done Building Project "C:\Users\aws4y\Documents\GitHub\Warp\PSF1\PSF1\PSF1.vcxproj" (build target(s)).
+     1>main.obj : error LNK2001: unresolved external symbol __imp__fftw_plan_r2r_1d
+     1>C:\Users\aws4y\Documents\GitHub\Warp\PSF1\Debug\PSF1.exe : fatal error LNK1120: 1 unresolved externals
+     1>Done Building Project "C:\Users\aws4y\Documents\GitHub\Warp\PSF1\PSF1\PSF1.vcxproj" (build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.75
+Time Elapsed 00:00:00.52

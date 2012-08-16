@@ -11,6 +11,11 @@ using namespace std;
 
 int main(void)
 {
+	double in=22;
+	double out;
+	fftw_plan dumb_plan;
+	dumb_plan=fftw_plan_r2r_1d(1, &in, &out,FFTW_DHT,FFTW_ESTIMATE);
+
 	cout<<"Hello World!"<<endl;
 	system("pause");
 	return 0;
