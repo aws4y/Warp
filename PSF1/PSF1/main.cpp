@@ -1,4 +1,4 @@
-/***********************************************
+/*****************************************************
 *Name: PSF1 (Ex.WARP.1)
 *Author: Aaron (Ron) Smith
 *Project: Warp experiment 1 The goal of PSF1 is to implement the Alard-Lupton method for generating the PSF of two fits images 
@@ -15,8 +15,8 @@ int main(void)
 	double out;
 	fftw_plan dumb_plan;
 	dumb_plan=fftw_plan_r2r_1d(1, &in, &out,FFTW_DHT,FFTW_ESTIMATE);
-
-	cout<<"Hello World!"<<endl;
+	fftw_execute(dumb_plan);
+	cout<<out<<endl;
 	system("pause");
 	return 0;
 }
