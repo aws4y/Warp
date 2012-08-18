@@ -7,16 +7,39 @@
 #include <iostream>
 #include "fitsio.h"
 #include "fftw3.h"
+#include "defines.h"
 using namespace std;
 
 int main(void)
 {
 	double in=22;
 	double out;
-	fftw_plan dumb_plan;
-	dumb_plan=fftw_plan_r2r_1d(1, &in, &out,FFTW_DHT,FFTW_ESTIMATE);
-	fftw_execute(dumb_plan);
-	cout<<out<<endl;
+
+	fitsfile *image;
+	char message[81];
+	int bitpix,naxis,maxdim=2;
+	long naxes[2];
+	long length;
+	int flag=0; // Flag takes the place of status from CFITSIO documentation
+	
+	flag=ffopen(&image,"noise.fts",0,&flag); //noise.fts is the 4 second dark frame.
+	if(flag==0)
+	{
+		fits_get_img_param(image,maxdim, &bitpix,&naxis, naxes, &flag);
+		cout<<"MAXDIM: "<<maxdim<<endl;
+		cout<<"BITPIX: "<<bitpix<<endl;
+		cout<<"NAXIS: "<<naxis<<endl;
+		cout<<"Image Dimesions: "<<naxes[1]<<"x"<<naxes[0]<<endl;
+		
+	}
+	else 
+	{
+		ffgerr(flag,message);
+		cout<<message<<endl;
+	}
+	
+	fits_close_file(image,&flag);
 	system("pause");
+	
 	return 0;
 }

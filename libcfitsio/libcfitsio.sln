@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcfitsio", "libcfitsio\libcfitsio.vcxproj", "{66BAF731-9C28-4997-B498-F6AE62B0A176}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66BAF731-9C28-4997-B498-F6AE62B0A176}.Debug|Win32.ActiveCfg = Debug|Win32
+		{66BAF731-9C28-4997-B498-F6AE62B0A176}.Debug|Win32.Build.0 = Debug|Win32
+		{66BAF731-9C28-4997-B498-F6AE62B0A176}.Release|Win32.ActiveCfg = Release|Win32
+		{66BAF731-9C28-4997-B498-F6AE62B0A176}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
