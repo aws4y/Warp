@@ -19,7 +19,8 @@ int main(void)
 	char message[81];
 	int bitpix,naxis,maxdim=2;
 	long naxes[2];
-	long length;
+	int length;
+	float *data;
 	int flag=0; // Flag takes the place of status from CFITSIO documentation
 	
 	flag=ffopen(&image,"noise.fts",0,&flag); //noise.fts is the 4 second dark frame.
@@ -30,7 +31,8 @@ int main(void)
 		cout<<"BITPIX: "<<bitpix<<endl;
 		cout<<"NAXIS: "<<naxis<<endl;
 		cout<<"Image Dimesions: "<<naxes[1]<<"x"<<naxes[0]<<endl;
-		
+		length=naxes[0]*naxes[1];
+		data=(float *) calloc(length,sizeof(float));  //this does nothing.
 	}
 	else 
 	{
@@ -38,6 +40,9 @@ int main(void)
 		cout<<message<<endl;
 	}
 	
+	if(data !=NULL)
+		free(data);
+
 	fits_close_file(image,&flag);
 	system("pause");
 	
