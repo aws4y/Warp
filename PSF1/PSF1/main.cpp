@@ -10,14 +10,37 @@
 #include "defines.h"
 using namespace std;
 
+void checkflag(int flag)
+{
+	char message[81];					
+	if(flag !=0)
+	{
+		ffgerr(flag,message);
+		cout<<message<<endl;
+		return;
+	}
+	return;
+}
+float mean(float *data,int length)
+{
+	double sum=0;
+	for(int i=0;i<length;i++)
+	{
+		sum+=(double) data[i];
+	}
+	return (float)(sum/(double) length);
+}
+
 int main(void)
 {
 	double in=22;
 	double out;
 
 	fitsfile *image;
-	char message[81];
-	int bitpix,naxis,maxdim=2;
+	
+	int bitpix,naxis,maxdim=2,anynull,nulval;
+	long fpix[2]={1,1};
+	long lpix[2];
 	long naxes[2];
 	int length;
 	float *data;
@@ -32,18 +55,23 @@ int main(void)
 		cout<<"NAXIS: "<<naxis<<endl;
 		cout<<"Image Dimesions: "<<naxes[1]<<"x"<<naxes[0]<<endl;
 		length=naxes[0]*naxes[1];
-		data=(float *) calloc(length,sizeof(float));  //this does nothing.
+		data=(float *) calloc(length,sizeof(float));  
+		
+		fits_read_img(image, TFLOAT,1,length,&nulval,data,&anynull,&flag); //attempting to read the pixel data
+		checkflag(flag);
+	
+		cout<<"Image Mean: "<<mean(data,length)<<endl;
 	}
 	else 
 	{
-		ffgerr(flag,message);
-		cout<<message<<endl;
+		checkflag(flag);
 	}
 	
 	if(data !=NULL)
 		free(data);
 
 	fits_close_file(image,&flag);
+	checkflag(flag);
 	system("pause");
 	
 	return 0;
