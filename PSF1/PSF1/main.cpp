@@ -10,16 +10,16 @@
 #include "defines.h"
 using namespace std;
 
-void checkflag(int flag)
+int checkflag(int flag)
 {
 	char message[81];					
 	if(flag !=0)
 	{
 		ffgerr(flag,message);
 		cout<<message<<endl;
-		return;
+		return TRUE;
 	}
-	return;
+	return FALSE;
 }
 float mean(float *data,int length)
 {
@@ -47,31 +47,33 @@ int main(void)
 	int flag=0; // Flag takes the place of status from CFITSIO documentation
 	
 	flag=ffopen(&image,"noise.fts",0,&flag); //noise.fts is the 4 second dark frame.
-	if(flag==0)
-	{
-		fits_get_img_param(image,maxdim, &bitpix,&naxis, naxes, &flag);
-		cout<<"MAXDIM: "<<maxdim<<endl;
-		cout<<"BITPIX: "<<bitpix<<endl;
-		cout<<"NAXIS: "<<naxis<<endl;
-		cout<<"Image Dimesions: "<<naxes[1]<<"x"<<naxes[0]<<endl;
-		length=naxes[0]*naxes[1];
-		data=(float *) calloc(length,sizeof(float));  
+	if(checkflag(flag))
+		return 1;
+
+	flag=fits_get_img_param(image,maxdim, &bitpix,&naxis, naxes, &flag);
+	if(checkflag(flag))
+		return 1;
+	cout<<"MAXDIM: "<<maxdim<<endl;
+	cout<<"BITPIX: "<<bitpix<<endl;
+	cout<<"NAXIS: "<<naxis<<endl;
+	cout<<"Image Dimesions: "<<naxes[1]<<"x"<<naxes[0]<<endl;
+	length=naxes[0]*naxes[1];
+	data=(float *) calloc(length,sizeof(float));  
 		
-		fits_read_img(image, TFLOAT,1,length,&nulval,data,&anynull,&flag); //attempting to read the pixel data
-		checkflag(flag);
+	flag=fits_read_img(image, TFLOAT,1,length,&nulval,data,&anynull,&flag); //attempting to read the pixel data
+	if(checkflag(flag))
+		return 1;
 	
-		cout<<"Image Mean: "<<mean(data,length)<<endl;
-	}
-	else 
-	{
-		checkflag(flag);
-	}
+	cout<<"Image Mean: "<<mean(data,length)<<endl;
+	 
+	
 	
 	if(data !=NULL)
 		free(data);
 
-	fits_close_file(image,&flag);
-	checkflag(flag);
+	flag=fits_close_file(image,&flag);
+	if(checkflag(flag))
+		return 1;
 	system("pause");
 	
 	return 0;
