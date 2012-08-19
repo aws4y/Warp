@@ -45,6 +45,7 @@ int main(void)
 	int length;
 	float *data;
 	int flag=0; // Flag takes the place of status from CFITSIO documentation
+	fftw_complex *img_fft;
 	
 	flag=ffopen(&image,"noise.fts",0,&flag); //noise.fts is the 4 second dark frame.
 	if(checkflag(flag))
@@ -59,7 +60,7 @@ int main(void)
 	cout<<"Image Dimesions: "<<naxes[1]<<"x"<<naxes[0]<<endl;
 	length=naxes[0]*naxes[1];
 	data=(float *) calloc(length,sizeof(float));  
-		
+	img_fft=(fftw_complex *)calloc(length,sizeof(fftw_complex));	
 	flag=fits_read_img(image, TFLOAT,1,length,&nulval,data,&anynull,&flag); //attempting to read the pixel data
 	if(checkflag(flag))
 		return 1;
@@ -70,7 +71,8 @@ int main(void)
 	
 	if(data !=NULL)
 		free(data);
-
+	if(img_fft!=NULL)
+		free(img_fft);
 	flag=fits_close_file(image,&flag);
 	if(checkflag(flag))
 		return 1;
