@@ -5,4 +5,9 @@
 #define FALSE 0 
 //#define NULL FALSE
 
+/*typedef class WARP_IMAGE{
+
+}*/
+
+
 #endif
