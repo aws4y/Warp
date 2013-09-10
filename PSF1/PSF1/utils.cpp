@@ -59,3 +59,31 @@ double imaginary_mean(fftw_complex *data, int length)
 		mean+=data[i][1];
 	return mean/(float) length;
 }
+
+void float_to_long_double(float *data, long double *out, int length)
+{ 
+	int i;
+	for(i=0;i<length;i++)
+	{
+		out[i]=(long double) data[i];
+	}
+}
+
+long double mean_long_double(long double *data, int length)
+{
+	int i;
+	long double mean=0;
+	for (i=0; i< length; i++)
+	{
+	 mean +=data[i];
+	}
+	return mean/(long double) length;
+}
+
+void float_to_double(float *data, double *out, int length)
+{
+	int i;
+	for(i=0; i<length; i++)
+		out[i]=(double) data[i];
+
+}
