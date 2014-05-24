@@ -1,17 +1,23 @@
-﻿Build started 5/24/2014 9:20:15 AM.
+﻿Build started 5/24/2014 10:33:57 AM.
      1>Project "C:\Users\aws4y\Documents\GitHub\Warp\PSF1\PSF1\PSF1.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /IC:\Users\aws4y\Documents\GitHub\Warp\PSF1\Debug /Zi /nologo /W3 /WX- /Od /D CODE_ANALYSIS /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /analyze /analyze:plugin"C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\\bin\localespc.dll" /errorReport:prompt   /analyze:quiet utils.cpp
          utils.cpp
-     1>utils.cpp(101): warning C4101: 'k' : unreferenced local variable
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\aws4y\Documents\GitHub\Warp\PSF1\x64\Debug\PSF1.exe" /INCREMENTAL /NOLOGO "libfftw3-3.lib" "libfftw3f-3.lib" "libfftw3l-3.lib" cfitsio.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\aws4y\Documents\GitHub\Warp\PSF1\x64\Debug\PSF1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\aws4y\Documents\GitHub\Warp\PSF1\x64\Debug\PSF1.lib" /MACHINE:X64 x64\Debug\main.obj
-         x64\Debug\utils.obj
-         PSF1.vcxproj -> C:\Users\aws4y\Documents\GitHub\Warp\PSF1\x64\Debug\PSF1.exe
-     1>c:\users\aws4y\documents\github\warp\psf1\psf1\main.cpp(113): warning C6283: 'l_data' is allocated with array new [], but deleted with scalar delete.
-     1>c:\users\aws4y\documents\github\warp\psf1\psf1\utils.cpp(140): warning C6283: 'b_set' is allocated with array new [], but deleted with scalar delete.
-     1>Done Building Project "C:\Users\aws4y\Documents\GitHub\Warp\PSF1\PSF1\PSF1.vcxproj" (Build target(s)).
+     1>utils.cpp(101): error C2065: 'vector' : undeclared identifier
+     1>utils.cpp(101): error C2062: type 'float' unexpected
+     1>utils.cpp(105): error C2065: 'b_length' : undeclared identifier
+     1>utils.cpp(116): error C2065: 'b_trace' : undeclared identifier
+     1>utils.cpp(116): error C2065: 'b_length' : undeclared identifier
+     1>utils.cpp(117): error C2065: 'b_length' : undeclared identifier
+     1>utils.cpp(118): error C2065: 'b_length' : undeclared identifier
+     1>utils.cpp(122): error C2065: 'b_length' : undeclared identifier
+     1>utils.cpp(128): error C2065: 'b_trace' : undeclared identifier
+     1>utils.cpp(131): error C2065: 'b_trace' : undeclared identifier
+     1>utils.cpp(133): error C2065: 'b_length' : undeclared identifier
+     1>utils.cpp(144): error C2065: 'b_length' : undeclared identifier
+     1>utils.cpp(144): error C2065: 'b_trace' : undeclared identifier
+     1>Done Building Project "C:\Users\aws4y\Documents\GitHub\Warp\PSF1\PSF1\PSF1.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:04.02
+Time Elapsed 00:00:00.86
