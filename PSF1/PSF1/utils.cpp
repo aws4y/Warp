@@ -100,30 +100,37 @@ float background_v_float(float *data, int length)
 	float sigma_old=0;
 	float mean, median;
 	vector <float> b_set(data,data+length);
-	int i, j;
+	int i;
 	bool sk_median_found = false;
-	for (i = 0; i < length; i++)
-	{
-		b_set[i] = data[i];
-	}
+	
 	mean = mean_float(data, length);
 	sigma_old = sigma_float(data, mean, length);
 	while (!sk_median_found)
 	{
+		sk_median_found = true;
 		mean = mean_float(b_set.data(), b_set.size());
-
+		sigma = sigma_float(b_set.data(),mean, b_set.size());
+		median = median_float(b_set.data(), length);
+		for (i = 0; i < b_set.size(); i++)
+		{
+			if (fabs(b_set[i])>(3 * sigma+fabs(median)))
+			{
+				b_set.erase(b_set.begin()+i);
+				sk_median_found = false;
+			}
+		}
 	}
 	if (((sigma - sigma_old) / sigma) < 0.2)
 		return mean;
 
 	background = (float) 2.5*median - (float)1.5*mean_float(data, length);
-
+	b_set.clear();
 	return background;
 }
 
 float median_float(float *data, int length) //median of medians
 {
-	
+	vector <float> 
 }
 
 float sigma_float(float *data, float m, int length)
