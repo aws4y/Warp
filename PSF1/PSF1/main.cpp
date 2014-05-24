@@ -48,7 +48,7 @@ int main(void)
 	cout<<"NAXIS: "<<naxis<<endl;
 	cout<<"Image Dimesions: "<<naxes[1]<<"x"<<naxes[0]<<endl;
 	length=naxes[0]*naxes[1];
-	l_data=(float *)calloc(length, sizeof(float));
+	l_data = new float[length];
 	data=(double *)fftw_malloc(naxes[0]*naxes[1]*sizeof(long double));
 	img_fft=(double*)fftw_malloc(naxes[0]*naxes[1]*sizeof(long double));
 	image_plan=fftw_plan_r2r_2d(naxes[0],naxes[1],data,img_fft,FFTW_REDFT10,FFTW_DHT,FFTW_ESTIMATE_PATIENT);
@@ -57,6 +57,7 @@ int main(void)
 		return 1;
 
 	cout<<"Image mean: "<<mean_float(l_data,length)<<endl; 
+	cout << "Image sigma: " << sigma_float(l_data,mean_float(l_data,length), length) << endl;
 	float_to_double(l_data,data, length);
 	fftw_execute(image_plan);
 	fftw_destroy_plan(image_plan);
@@ -109,7 +110,7 @@ int main(void)
 		fftw_free(data);
 	if(img_fft!=NULL)
 		fftw_free(img_fft);
-	free(l_data);
+	delete l_data;
 	flag=fits_close_file(image,&flag);
 	if(checkflag(flag))
 		return 1;
