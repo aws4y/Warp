@@ -17,4 +17,8 @@ long double mean_long_double(long double *data, int length);
 float mean_float(float *data,int length);
 double mean_double(double *data, int length);
 
+//floating point stats functions for computing image background, used later for source detection
+float background_v_float(float *data, int length);
+float median_float(float *data, int length);
+float sigma_float(float *data, float m, int length);
 #endif

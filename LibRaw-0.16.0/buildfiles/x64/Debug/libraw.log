@@ -1,0 +1,25 @@
+﻿Build started 8/1/2014 12:15:50 PM.
+     1>Project "C:\Users\aws4y\Documents\GitHub\Warp\LibRaw-0.16.0\buildfiles\libraw.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I.. /I"d:\Qt\4.7.3\mkspecs\win32-msvc2008" /Zi /nologo /W0 /WX- /Od /D _WINDOWS /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D LIBRAW_BUILDLIB /D _WINDLL /Gm- /EHsc /MDd /GS- /fp:precise /Zc:wchar_t- /Zc:forScope /GR /Fo"debug\\" /Fd".\vc120.pdb" /Gd /TP /errorReport:prompt -Zm200 -MP ..\internal\dcraw_common.cpp ..\internal\dcraw_fileio.cpp ..\internal\demosaic_packs.cpp ..\src\libraw_c_api.cpp ..\src\libraw_cxx.cpp ..\src\libraw_datastream.cpp
+         dcraw_common.cpp
+         dcraw_fileio.cpp
+         demosaic_packs.cpp
+         libraw_c_api.cpp
+         libraw_cxx.cpp
+         libraw_datastream.cpp
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1186,5): warning MSB8012: TargetPath(C:\Users\aws4y\Documents\GitHub\Warp\LibRaw-0.16.0\x64\Debug\libraw.dll) does not match the Linker's OutputFile property value (C:\Users\aws4y\Documents\GitHub\Warp\LibRaw-0.16.0\buildfiles\debug\libraw.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"debug\libraw.dll" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X64 /DLL debug\dcraw_common.obj
+         debug\dcraw_fileio.obj
+         debug\demosaic_packs.obj
+         debug\libraw_c_api.obj
+         debug\libraw_cxx.obj
+         debug\libraw_datastream.obj
+            Creating library debug\libraw.lib and object debug\libraw.exp
+         libraw.vcxproj -> C:\Users\aws4y\Documents\GitHub\Warp\LibRaw-0.16.0\x64\Debug\libraw.dll
+     1>Done Building Project "C:\Users\aws4y\Documents\GitHub\Warp\LibRaw-0.16.0\buildfiles\libraw.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.48
