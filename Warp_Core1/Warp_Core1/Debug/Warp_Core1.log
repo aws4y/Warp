@@ -1,32 +1,13 @@
-﻿Build started 8/7/2014 10:40:28 PM.
+﻿Build started 8/8/2014 4:56:48 PM.
      1>Project "C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Warp_Core1\Warp_Core1.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D WARP_CORE1_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Warp_Image.cpp
          Warp_Image.cpp
-     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\swprintf.inl(41): error C2143: syntax error : missing ')' before ';'
-     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\swprintf.inl(41): error C2660: '_vswprintf_c_l' : function does not take 4 arguments
-     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\swprintf.inl(41): error C2143: syntax error : missing ';' before ','
-     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\swprintf.inl(41): error C2059: syntax error : ')'
-     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\swprintf.inl(51): error C2143: syntax error : missing ')' before ';'
-     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\swprintf.inl(51): error C2660: '_vswprintf_c_l' : function does not take 4 arguments
-     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\swprintf.inl(51): error C2143: syntax error : missing ';' before ','
-     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\swprintf.inl(51): error C2059: syntax error : ')'
-     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\wchar.h(1055): error C2143: syntax error : missing ')' before ';'
-     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\wchar.h(1055): error C2059: syntax error : ')'
-     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\wchar.h(1055): error C2143: syntax error : missing ';' before '?'
-     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\wchar.h(1256): error C2143: syntax error : missing ')' before ';'
-     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\wchar.h(1256): error C2143: syntax error : missing ';' before '||'
-     1>c:\program files (x86)\microsoft visual studio 12.0\vc\include\wchar.h(1256): error C2059: syntax error : ')'
-     1>c:\users\aaron\documents\github\warp\warp_core1\warp_core1\warp_image.cpp(70): error C2244: 'WarpImage<VTYPE>::operator +' : unable to match function definition to an existing declaration
-                 c:\users\aaron\documents\github\warp\warp_core1\warp_core1\warp_image.h(32) : see declaration of 'WarpImage<VTYPE>::operator +'
-                 definition
-                 'WarpImage *WarpImage<VTYPE>::operator +(const WarpImage<VTYPE> *)'
-                 existing declarations
-                 'WarpImage<VTYPE> *WarpImage<VTYPE>::operator +(const WarpImage<VTYPE> *)'
-     1>c:\users\aaron\documents\github\warp\warp_core1\warp_core1\warp_image.cpp(71): error C2059: syntax error : '}'
-     1>c:\users\aaron\documents\github\warp\warp_core1\warp_core1\warp_image.cpp(71): error C2143: syntax error : missing ';' before '}'
-     1>Done Building Project "C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Warp_Core1\Warp_Core1.vcxproj" (Build target(s)) -- FAILED.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Debug\Warp_Core1.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Debug\Warp_Core1.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Debug\Warp_Core1.lib" /MACHINE:X86 /DLL Debug\Warp_Image.obj
+         Warp_Core1.vcxproj -> C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Debug\Warp_Core1.dll
+     1>Done Building Project "C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Warp_Core1\Warp_Core1.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.18
+Time Elapsed 00:00:00.34

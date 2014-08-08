@@ -77,5 +77,11 @@ template <typename T> WarpImage<T>* WarpImage<T>::operator+(const WarpImage* im2
 
 template <class T> void WarpImage<T>::setData(void *buffer)
 {
+	switch (data_type)
+	{
+		if (this.data != NULL)
+			delete this.data;
+		this.data = (T)buffer;
 
+	}
 }
