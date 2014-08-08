@@ -3,12 +3,12 @@
 #define WAPR_IMAGE_H
 #include <vector>
 #include <time.h>
-#include "Warp.h"
+#include "Warp_Global.h"
 using namespace std;
 
 template <T> class WarpImage {
 private:
-	vector <T> *data;
+	T *data;
 	int width; //Image width
 	int height; //Image height
 	time_t utc_time; // UTC time the image was taken
@@ -16,8 +16,13 @@ private:
 	vector <string> *metadata;
 	data_t data_type;
 public:
-	WarpImage(data_t);
+	WarpImage(data_t,width,height);
 	WarpImage(int,int,time_t,time_t, vector<string> metadata, data_t, void *);
-
+	int getWidth();
+	int getHeight();
+	WarpImage* operator +(const WarpImage *);
+	WarpImage* operator -(const WarpImage *);
+	WarpImage* operator *(const WarpImage *);
+	
 };
 #endif

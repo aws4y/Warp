@@ -79,7 +79,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Warp.h" />
+    <ClInclude Include="Warp_Global.h" />
     <ClInclude Include="Warp_Image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Warp_Image.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

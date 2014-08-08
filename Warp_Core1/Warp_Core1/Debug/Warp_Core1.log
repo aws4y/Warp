@@ -1,0 +1,19 @@
+﻿Build started 8/7/2014 6:15:46 PM.
+     1>Project "C:\Users\aws4y\Documents\GitHub\Warp\Warp_Core1\Warp_Core1\Warp_Core1.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D WARP_CORE1_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Warp_Image.cpp
+         Warp_Image.cpp
+     1>c:\users\aws4y\documents\github\warp\warp_core1\warp_core1\warp_image.h(9): error C2061: syntax error : identifier 'T'
+     1>c:\users\aws4y\documents\github\warp\warp_core1\warp_core1\warp_image.h(9): error C2143: syntax error : missing ';' before '<'
+     1>c:\users\aws4y\documents\github\warp\warp_core1\warp_core1\warp_image.h(9): error C2992: 'WarpImage' : invalid or missing template parameter list
+                 c:\users\aws4y\documents\github\warp\warp_core1\warp_core1\warp_image.h(9) : see declaration of 'WarpImage'
+     1>c:\users\aws4y\documents\github\warp\warp_core1\warp_core1\warp_image.h(9): error C2059: syntax error : '<'
+     1>c:\users\aws4y\documents\github\warp\warp_core1\warp_core1\warp_image.h(9): error C2143: syntax error : missing ';' before '{'
+     1>c:\users\aws4y\documents\github\warp\warp_core1\warp_core1\warp_image.h(9): error C2447: '{' : missing function header (old-style formal list?)
+     1>c:\users\aws4y\documents\github\warp\warp_core1\warp_core1\warp_image.cpp(3): error C2061: syntax error : identifier 'T'
+     1>c:\users\aws4y\documents\github\warp\warp_core1\warp_core1\warp_image.cpp(3): fatal error C1903: unable to recover from previous error(s); stopping compilation
+     1>Done Building Project "C:\Users\aws4y\Documents\GitHub\Warp\Warp_Core1\Warp_Core1\Warp_Core1.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.21

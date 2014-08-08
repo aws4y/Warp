@@ -18,8 +18,16 @@
     <ClInclude Include="Warp_Image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Warp_Global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Warp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Warp_Image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
