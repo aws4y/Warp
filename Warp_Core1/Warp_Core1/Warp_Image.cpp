@@ -55,7 +55,7 @@ template <typename T> void WarpImage<T>::setDEC(int D, int M, float S)
 	DEC.s = S;
 }
 
-template <typename T> WarpImage* WarpImage<T>::operator+(const WarpImage* im2)
+template <typename T> WarpImage<T>* WarpImage<T>::operator+(const WarpImage* im2)
 {
 	if (this.width != im2->getWidth())
 		return NULL;
@@ -64,7 +64,7 @@ template <typename T> WarpImage* WarpImage<T>::operator+(const WarpImage* im2)
 	WarpImage *result;
 	T *buffer;
 	buffer = new T[width*height];
-	result = new WarpImage(this.data_type, this.width, this.height)
+	result = new WarpImage(this.data_type, this.width, this.height);
 		// I don't really know what I am doing
 
 	}

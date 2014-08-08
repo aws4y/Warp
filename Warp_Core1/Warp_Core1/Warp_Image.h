@@ -29,9 +29,10 @@ public:
 	void setDEC(int, int, float);
 	void appendMetadata(string);
 	char *getFile_name();
-	WarpImage* operator +(const WarpImage *);  //in place (i.e. no transalation) addition of images only works for images of the same size 
-	WarpImage* operator -(const WarpImage *);  // in place subtraction of images of the same size, NULL otherwise;
-	WarpImage* operator *(const double);        //scalar multiplication of images, type cast to whatever the image is
+	WarpImage<VTYPE>* operator +(const WarpImage *);  //in place (i.e. no transalation) addition of images only works for images of the same size 
+	WarpImage<VTYPE>* operator -(const WarpImage *);  // in place subtraction of images of the same size, NULL otherwise;
+	WarpImage<double>* operator *(const double);        //scalar multiplication of images, type cast to whatever the image is
+	WarpImage<double>* operator / (const WarpImage *);
 	~WarpImage();
 	
 };
