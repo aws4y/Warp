@@ -55,6 +55,7 @@ template <typename T> void WarpImage<T>::setDEC(int D, int M, float S)
 	DEC.s = S;
 }
 
+
 template <typename T> WarpImage<T>* WarpImage<T>::operator+(const WarpImage* im2)
 {
 	if (this.width != im2->getWidth())
@@ -63,9 +64,18 @@ template <typename T> WarpImage<T>* WarpImage<T>::operator+(const WarpImage* im2
 		return NULL;
 	WarpImage *result;
 	T *buffer;
-	buffer = new T[width*height];
+	int length = width*height;
+	buffer = new T[length];
 	result = new WarpImage(this.data_type, this.width, this.height);
-		// I don't really know what I am doing
+	for (int i = 0; i < length; i++)
+		buffer[i] = this.data[i] + im2.data[i];
+	result.setData(buffer);
+	result.appendMetadata(string("The result of adding ") + this.im_name+string(" and ")+im2.im_name)
+	return result;
+	
+}
 
-	}
+template <class T> void WarpImage<T>::setData(void *buffer)
+{
+
 }

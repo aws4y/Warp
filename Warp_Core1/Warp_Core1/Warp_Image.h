@@ -17,7 +17,7 @@ private:
 	coord DEC;  //Dec Coordinate for the image center
 	vector <string> *metadata;
 	data_t data_type;
-	char *file_name;
+	string im_name;
 public:
 	WarpImage(data_t,int,int);
 	WarpImage(int,int,time_t,time_t, vector<string> metadata, data_t, void *);
@@ -29,6 +29,7 @@ public:
 	void setDEC(int, int, float);
 	void appendMetadata(string);
 	char *getFile_name();
+	void setData(void *);
 	WarpImage<VTYPE>* operator +(const WarpImage *);  //in place (i.e. no transalation) addition of images only works for images of the same size 
 	WarpImage<VTYPE>* operator -(const WarpImage *);  // in place subtraction of images of the same size, NULL otherwise;
 	WarpImage<double>* operator *(const double);        //scalar multiplication of images, type cast to whatever the image is
