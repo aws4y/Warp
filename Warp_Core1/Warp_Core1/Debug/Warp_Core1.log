@@ -1,13 +1,18 @@
-﻿Build started 8/8/2014 4:56:48 PM.
-     1>Project "C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Warp_Core1\Warp_Core1.vcxproj" on node 2 (Build target(s)).
+﻿Build started 9/1/2014 1:42:52 PM.
+     1>Project "C:\Users\aws4y\Documents\GitHub\Warp\Warp_Core1\Warp_Core1\Warp_Core1.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D WARP_CORE1_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Warp_Image.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D WARP_CORE1_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Warp.cpp Warp_Image.cpp
+         Warp.cpp
+         Generating Code...
+         Compiling...
          Warp_Image.cpp
+         Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Debug\Warp_Core1.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Debug\Warp_Core1.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Debug\Warp_Core1.lib" /MACHINE:X86 /DLL Debug\Warp_Image.obj
-         Warp_Core1.vcxproj -> C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Debug\Warp_Core1.dll
-     1>Done Building Project "C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Warp_Core1\Warp_Core1.vcxproj" (Build target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\aws4y\Documents\GitHub\Warp\Warp_Core1\Debug\Warp_Core1.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\aws4y\Documents\GitHub\Warp\Warp_Core1\Debug\Warp_Core1.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\aws4y\Documents\GitHub\Warp\Warp_Core1\Debug\Warp_Core1.lib" /MACHINE:X86 /DLL Debug\Warp.obj
+         Debug\Warp_Image.obj
+         Warp_Core1.vcxproj -> C:\Users\aws4y\Documents\GitHub\Warp\Warp_Core1\Debug\Warp_Core1.dll
+     1>Done Building Project "C:\Users\aws4y\Documents\GitHub\Warp\Warp_Core1\Warp_Core1\Warp_Core1.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.34
+Time Elapsed 00:00:00.48
