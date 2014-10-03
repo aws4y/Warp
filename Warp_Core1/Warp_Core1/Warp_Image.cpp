@@ -70,12 +70,11 @@ template <typename T> WarpImage<T>* WarpImage<T>::operator+(const WarpImage* im2
 	for (int i = 0; i < length; i++)
 		buffer[i] = this.data[i] + im2.data[i];
 	result.setData(buffer);
-	result.appendMetadata(string("The result of adding ") + this.im_name+string(" and ")+im2.im_name)
 	return result;
 	
 }
 
-template <typename T> WarpImage<T>* WarpImage<T>::operator+(const WarpImage* im2)
+template <typename T> WarpImage<T>* WarpImage<T>::operator-(const WarpImage* im2)
 {
 	if (this.width != im2->getWidth())
 		return NULL;
@@ -89,7 +88,7 @@ template <typename T> WarpImage<T>* WarpImage<T>::operator+(const WarpImage* im2
 	for (int i = 0; i < length; i++)
 		buffer[i] = this.data[i] - im2.data[i];
 	result.setData(buffer);
-	result.appendMetadata(string("The result of subtracting ") + this.im_name + string(" and ") + im2.im_name)
+	result.appendMetadata(string("The result of subtracting ") + this.im_name + string(" and ") + im2.im_name);
 		return result;
 
 }

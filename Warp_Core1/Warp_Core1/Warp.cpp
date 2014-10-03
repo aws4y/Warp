@@ -1,10 +1,7 @@
 #include "Warp.h"
 
 
-void warp_plugin_load(char *plug_name)
-{
 
-}
 
 template <class T> WarpImage<T> *sub_add(WarpImage<T> *im1, WarpImage<T> *im2, int width, int length, int x, int y)
 {
@@ -16,4 +13,9 @@ template <class T> WarpImage<T> *sub_add(WarpImage<T> *im1, WarpImage<T> *im2, i
 template <class T> void rotate(WarpImage<T> *im, float rotation)
 {
 
+}
+
+template <class T> WarpImage <T> * create_stack(int size)
+{
+	return (WarpImage <T> *)calloc(size, sizeof(WarpImage<T>);
 }
