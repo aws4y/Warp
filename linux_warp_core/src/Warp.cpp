@@ -17,5 +17,7 @@ template <class T> void rotate(WarpImage<T> *im, float rotation)
 
 template <class T> WarpImage <T> * create_stack(int size)
 {
-	return (WarpImage <T> *)calloc(size, sizeof(WarpImage<T>);
+    WarpImage<T> *stack_ptr;
+    stack_ptr=new WarpImage<T>[size];
+    return stack_ptr;
 }

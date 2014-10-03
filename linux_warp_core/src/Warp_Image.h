@@ -2,6 +2,7 @@
 #ifndef WARP_IMAGE_H
 #define WAPR_IMAGE_H
 #include <vector>
+#include <string>
 #include <time.h>
 #include "Warp_Global.h"
 using namespace std;
