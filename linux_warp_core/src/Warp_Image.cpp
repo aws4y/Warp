@@ -1,4 +1,6 @@
 #include "Warp.h"
+#include <stdlib.h>
+#include <string>
 
 template <typename VTYPE> WarpImage<VTYPE>::WarpImage(data_t dataType, int width, int height)
 {
@@ -19,6 +21,11 @@ template <typename VTYPE> WarpImage<VTYPE>::WarpImage(int new_width, int new_hei
 	this.data = (VTYPE)buffer;
 }
 
+template <typename T> WarpImage<T>::~WarpImage()
+{
+    delete data;
+    delete metadata;
+}
 template <typename T> int WarpImage<T>::getHeight()
 {
 	return height;
@@ -103,3 +110,19 @@ template <class T> void WarpImage<T>::setData(void *buffer)
 
 	}
 }
+template <class T> WarpImage<double>* WarpImage<T>::operator* (const double c)
+{
+    WarpImage<double> *result;
+    double *new_pixbuf;
+    new_pixbuf=(double *) malloc(sizeof(double)*width*height);
+    for(int i=0; i<width*height;i++)
+    {
+        new_pixbuf[i]=c*(double)*data[i];
+    }
+    result=new WarpImage<double>(width,height,utc_time, local_time, *metadata, DOUBLE, new_pixbuf);
+    result->setRA(RA.d,RA.m,RA.s);
+    result->setDEC(DEC.d,DEC.m,DEC.s);
+    
+    return result;
+}
+
