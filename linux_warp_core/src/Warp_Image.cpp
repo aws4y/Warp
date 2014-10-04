@@ -125,4 +125,7 @@ template <class T> WarpImage<double>* WarpImage<T>::operator* (const double c)
     
     return result;
 }
-
+template <class T> char* WarpImage<T>::getFileName()
+{
+    return im_name.data();
+}

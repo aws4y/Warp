@@ -29,7 +29,7 @@ public:
 	void setRA(int, int, float);
 	void setDEC(int, int, float);
 	void appendMetadata(string);
-	char *getFile_name();
+	char *getFileName();
 	void setData(void *);
 	WarpImage<VTYPE>* operator +(const WarpImage *);  //in place (i.e. no transalation) addition of images only works for images of the same size 
 	WarpImage<VTYPE>* operator -(const WarpImage *);  // in place subtraction of images of the same size, NULL otherwise;
