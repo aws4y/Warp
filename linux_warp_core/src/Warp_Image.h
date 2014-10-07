@@ -31,10 +31,11 @@ public:
 	void appendMetadata(string);
 	char *getFileName();
 	void setData(void *);
+        VTYPE *getData();
 	WarpImage<VTYPE>* operator +(const WarpImage *);  //in place (i.e. no transalation) addition of images only works for images of the same size 
 	WarpImage<VTYPE>* operator -(const WarpImage *);  // in place subtraction of images of the same size, NULL otherwise;
 	WarpImage<double>* operator *(const double);        //scalar multiplication of images, type cast to whatever the image is
-	WarpImage<double>* operator / (const WarpImage *);
+	WarpImage<double>* operator/ (const WarpImage *divisor);
 	~WarpImage();
 	
 };

@@ -125,6 +125,27 @@ template <class T> WarpImage<double>* WarpImage<T>::operator* (const double c)
     
     return result;
 }
+template <class T> WarpImage<double>* WarpImage<T>::operator/ (const WarpImage *divisor)
+{
+    WarpImage<double> *result;
+    double *new_pixbuf;
+    double *d_data;
+    if(this->getWidth()!=divisor->getWidth()||this->getHeight()!=divisor->getHeight())
+    {
+        return NULL;
+    }
+    new_pixbuf=(double *) malloc(sizeof(double)*width*height);
+    d_data=divisor->getData();
+    for(int i=0; i<width*height;i++)
+    {
+        new_pixbuf[i]=(double)data[i]/(double) d_data[i];
+    }
+    result=new WarpImage<double>(width,height,utc_time, local_time, *metadata, DOUBLE, new_pixbuf);
+    result->setRA(RA.d,RA.m,RA.s);
+    result->setDEC(DEC.d,DEC.m,DEC.s);
+    
+    return result;
+}
 template <class T> char* WarpImage<T>::getFileName()
 {
     return im_name.data();
