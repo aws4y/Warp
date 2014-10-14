@@ -6,7 +6,8 @@ using namespace std;
 
 class  WarpDevice
 {
-    vector <string> metadata
+private:
+    vector <string> metaData;
 public:
     string * returnMetadata();
 };
