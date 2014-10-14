@@ -4,6 +4,7 @@
 
 #include "Warp_Global.h"
 #include "Warp_Image.h"
+#include "Warp_Device.h"
 
 void warp_plugin_load(char *plug_file_name);
 template <class T> WarpImage<T> *sub_add(WarpImage<T>* im1, WarpImage<T> *im2, int length, int width, int x, int y); //adding subsets of images
