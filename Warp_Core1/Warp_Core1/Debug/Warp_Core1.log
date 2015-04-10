@@ -1,18 +1,35 @@
+<<<<<<< HEAD
 ﻿Build started 4/9/2015 11:48:53 PM.
      1>Project "C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Warp_Core1\Warp_Core1.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D WARP_CORE1_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Warp.cpp Warp_Image.cpp
          Warp.cpp
+=======
+﻿Build started 10/3/2014 10:57:52 AM.
+     1>Project "C:\Users\Phoenix3-vm\Documents\GitHub\Warp\Warp_Core1\Warp_Core1\Warp_Core1.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D WARP_CORE1_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Warp.cpp Warp_Image.cpp
+         Warp.cpp
+     1>c:\users\phoenix3-vm\documents\github\warp\warp_core1\warp_core1\warp.cpp(25): fatal error C1075: end of file found before the left parenthesis '(' at 'c:\users\phoenix3-vm\documents\github\warp\warp_core1\warp_core1\warp.cpp(23)' was matched
+>>>>>>> origin/master
          Generating Code...
          Compiling...
          Warp_Image.cpp
          Generating Code...
+<<<<<<< HEAD
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Debug\Warp_Core1.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Debug\Warp_Core1.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Debug\Warp_Core1.lib" /MACHINE:X86 /DLL Debug\Warp.obj
          Debug\Warp_Image.obj
          Warp_Core1.vcxproj -> C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Debug\Warp_Core1.dll
      1>Done Building Project "C:\Users\Aaron\Documents\GitHub\Warp\Warp_Core1\Warp_Core1\Warp_Core1.vcxproj" (Build target(s)).
+=======
+     1>Done Building Project "C:\Users\Phoenix3-vm\Documents\GitHub\Warp\Warp_Core1\Warp_Core1\Warp_Core1.vcxproj" (Build target(s)) -- FAILED.
+>>>>>>> origin/master
 
-Build succeeded.
+Build FAILED.
 
+<<<<<<< HEAD
 Time Elapsed 00:00:00.99
+=======
+Time Elapsed 00:00:00.44
+>>>>>>> origin/master
