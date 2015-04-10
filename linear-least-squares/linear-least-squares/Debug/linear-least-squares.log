@@ -1,14 +1,14 @@
-﻿Build started 4/9/2015 11:48:04 PM.
-     1>Project "C:\Users\Aaron\Documents\GitHub\Warp\linear-least-squares\linear-least-squares\linear-least-squares.vcxproj" on node 2 (Build target(s)).
+﻿Build started 4/10/2015 12:07:26 PM.
+     1>Project "C:\Users\aws4y\Documents\GitHub\Warp\linear-least-squares\linear-least-squares\linear-least-squares.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-     1>c:\users\aaron\documents\github\warp\linear-least-squares\linear-least-squares\main.cpp(9): warning C4101: 'normal' : unreferenced local variable
+     1>c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\main.cpp(8): warning C4101: 'normal' : unreferenced local variable
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Aaron\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Aaron\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Aaron\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.lib" /MACHINE:X86 Debug\main.obj
-         linear-least-squares.vcxproj -> C:\Users\Aaron\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.exe
-     1>Done Building Project "C:\Users\Aaron\Documents\GitHub\Warp\linear-least-squares\linear-least-squares\linear-least-squares.vcxproj" (Build target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\aws4y\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\aws4y\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\aws4y\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.lib" /MACHINE:X86 Debug\main.obj
+         linear-least-squares.vcxproj -> C:\Users\aws4y\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.exe
+     1>Done Building Project "C:\Users\aws4y\Documents\GitHub\Warp\linear-least-squares\linear-least-squares\linear-least-squares.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.86
+Time Elapsed 00:00:00.51

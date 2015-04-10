@@ -1,17 +1,21 @@
-#include <iostream>
 #include "Matrix.h"
-using namespace std;
+
 
 int main(void)
 {
 	int n, N;
-	Matrix <double> *matrix;
-	Matrix <double> *normal;
+	Matrix *input;
+	Matrix *normal;
 	cout << "Number of unknowns: ";
 	cin >> n;
 	cout << "Number of Equations:";
 	cin >> N;
-	matrix = new Matrix <double> (N, n + 1);
-	delete matrix;
+	input = new Matrix (N, n + 1);
+	input->input();
+	input->display();
+
+	delete input;
+	cin.get();
+	cin.get();
 	return 0;
 }
