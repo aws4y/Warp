@@ -67,6 +67,7 @@ int main(void)
 	delete y;
 	delete XTy;
 	delete normal;
+	delete solution;
 	cin.get();
 	cin.get();
 	return 0;
