@@ -1,5 +1,6 @@
 #include "Matrix.h"
-
+#include <assert.h>
+#define DEBUG
 Matrix * Mult(Matrix *lhs, Matrix *rhs)
 {
 	double sum;
@@ -58,16 +59,17 @@ int main(void)
 	cout << "Normal Equations: " << endl;
 	normal->display();
 	cout << "rref Normal system: " << endl;
-	solution = normal->rref();
-	solution->display();
-	print_solution(solution);
+	normal->rref();
+
+	normal->display();
+	print_solution(normal);
 	delete X;
 	delete XT;
 	delete XTX;
 	delete y;
 	delete XTy;
 	delete normal;
-	delete solution;
+//	delete solution;
 	cin.get();
 	cin.get();
 	return 0;

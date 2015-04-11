@@ -18,7 +18,7 @@ public:
 	Matrix * Trans();
 	Matrix & operator=(Matrix *);
 	Matrix & operator* (Matrix *);
-	Matrix * Mult(Matrix *lhs, Matrix *rhs);
+
 	void set_element(int, int, double);
 	Matrix *rref();
 const double get_element(int, int);
@@ -118,6 +118,8 @@ void Matrix::input()
 }
 Matrix:: ~Matrix()
 {
+	if (matrix == nullptr)
+		return;
 	for (int i = 0; i < rows; i++)
 		delete[] matrix[i];
 	delete [] matrix;
@@ -132,21 +134,14 @@ Matrix * Matrix::Trans()
 	return transpose;
 }
 
-Matrix & Matrix::operator=(Matrix *orig)
+Matrix & Matrix::operator=(const Matrix &orig)
 {
-	if (matrix != nullptr)
-	{
-		delete matrix;
-	}
-
-	rows = orig->get_rows();
-	columns=orig->get_columns();
-	for (int i = 0; i < rows; i++)
-		matrix[i] = new double[columns];
-	for (int i = 0; i < rows; i++)
-		for (int j = 0; j < columns; j++)
-			matrix[i][j] = orig->get_element(i,j);
-	return *this;
+	Matrix *result;
+	result = new Matrix((*orig)->get_rows(), orig->get_columns());
+	for (int i = 0; i < orig->get_rows(); i++)
+		for (int j = 0; j < orig->get_columns(); j++)
+			result->set_element(i,j,orig->get_element(i,j));
+	return *result;
 }
 
 Matrix & Matrix::operator*(Matrix * rhs )
@@ -180,8 +175,10 @@ Matrix & Matrix::operator*(Matrix * rhs )
 Matrix * Matrix::rref()
 {
 	Matrix *result;
+
 	int i=0;
-	result = this;
+	result = new Matrix();
+	(*result) = (*this);
 	int l = 0;
 	for (int r = 0; r < rows; r++)
 	{
