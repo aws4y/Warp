@@ -93,7 +93,7 @@ void print_solution(Matrix *soln)
 	cout << "Candiate linear least squares fit:" << endl;
 	for (int i = 0; i < soln->get_rows(); i++)
 	{
-		cout << "x" << i << ": " << soln->get_element(i, soln->get_columns() - 1) << endl;
+		cout << "x" << i+1 << ": " << soln->get_element(i, soln->get_columns() - 1) << endl;
 	}
 	cout << endl;
 }
