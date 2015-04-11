@@ -24,7 +24,8 @@ Matrix * Mult(Matrix *lhs, Matrix *rhs)
 	}
 	return result;
 }
-
+Matrix * construct_normal(Matrix *, Matrix *);
+void print_solution(Matrix *);
 int main(void)
 {
 	int n, N;
@@ -33,6 +34,8 @@ int main(void)
 	Matrix *XTX;
 	Matrix *y;
 	Matrix *XTy;
+	Matrix *normal;
+	Matrix *solution;
 	cout << "Number of unknowns: ";
 	cin >> n;
 	cout << "Number of Equations:";
@@ -51,12 +54,47 @@ int main(void)
 	cout << "X transpose y:" << endl;
 	XTy = Mult(XT, y);	
 	XTy->display();
+	normal = construct_normal(XTX, XTy);
+	cout << "Normal Equations: " << endl;
+	normal->display();
+	cout << "rref Normal system: " << endl;
+	solution = normal->rref();
+	solution->display();
+	print_solution(solution);
 	delete X;
 	delete XT;
 	delete XTX;
 	delete y;
 	delete XTy;
+	delete normal;
 	cin.get();
 	cin.get();
 	return 0;
 }
+
+Matrix * construct_normal(Matrix *XTX, Matrix *XTy)
+{
+	Matrix *normal;
+	normal = new Matrix(XTX->get_rows(), XTX->get_columns() + 1);
+	for (int i = 0; i < XTX->get_rows(); i++)
+		for (int j = 0; j < XTX->get_columns(); j++)
+		{
+		normal->set_element(i, j, XTX->get_element(i, j));
+		}
+	for (int k = 0; k < XTX->get_rows(); k++)
+	{
+		normal->set_element(k,XTX->get_columns(), XTy->get_element(k, 0));
+	}
+	return normal;
+}
+void print_solution(Matrix *soln)
+{
+
+	cout << "Candiate linear least squares fit:" << endl;
+	for (int i = 0; i < soln->get_rows(); i++)
+	{
+		cout << "x" << i << ": " << soln->get_element(i, soln->get_columns() - 1) << endl;
+	}
+	cout << endl;
+}
+
