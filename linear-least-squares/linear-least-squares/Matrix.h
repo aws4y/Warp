@@ -1,6 +1,7 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 #include <iostream>
+#include <iomanip>
 using namespace std;
 class Matrix
 {
@@ -12,13 +13,14 @@ private:
 public:
 	Matrix();
 	Matrix(int r, int c);
+	Matrix(const Matrix &);
 	~Matrix();
 	void display();
 	void input();
 	Matrix * Trans();
-	Matrix & operator=(Matrix *);
-	Matrix & operator* (Matrix *);
-
+	Matrix & operator=(const Matrix &);
+	Matrix & operator*= (const Matrix &);
+	Matrix & operator*(const Matrix &);
 	void set_element(int, int, double);
 	Matrix *rref();
 const double get_element(int, int);
@@ -90,9 +92,20 @@ Matrix::Matrix(int r, int c)
 		for (int j = 0; j < columns; j++)
 			matrix[i][j] = 0;
 }
-
+Matrix::Matrix(const Matrix & rhs)
+{
+	rows = rhs.rows;
+	columns = rhs.columns;
+	matrix = new double *[rows];
+	for (int i = 0; i < rows; i++)
+		matrix[i] = new double[columns];
+	for (int i = 0; i < rows; i++)
+		for (int j = 0; j < columns; j++)
+			matrix[i][j] = rhs.matrix[i][j];
+}
 void Matrix::display()
 {
+	cout << fixed << setprecision(6);
 	for (int i = 0; i < rows; i++)
 	{
 		cout << "|\t";
@@ -136,37 +149,60 @@ Matrix * Matrix::Trans()
 
 Matrix & Matrix::operator=(const Matrix &orig)
 {
-	Matrix *result;
-	result = new Matrix((*orig)->get_rows(), orig->get_columns());
-	for (int i = 0; i < orig->get_rows(); i++)
-		for (int j = 0; j < orig->get_columns(); j++)
-			result->set_element(i,j,orig->get_element(i,j));
-	return *result;
+	for (int i = 0; i < rows; i++)
+		delete[] matrix[i];
+	delete [] matrix;
+	rows = orig.rows;
+	columns = orig.columns;
+	matrix = new double *[rows];
+	for (int i = 0; i < rows; i++)
+	{
+		matrix[i] = new double[columns];
+	}
+	for (int i = 0; i < rows; i++)
+		for (int j = 0; j < columns; j++)
+			matrix[i][j] = orig.matrix[i][j];
+	return *this;
 }
 
-Matrix & Matrix::operator*(Matrix * rhs )
+Matrix & Matrix::operator*=( const Matrix & rhs )
 {
 	double sum;
 	Matrix *result;
-	if (columns != rhs->get_rows())
+	Matrix *old;
+	old = this;
+	result = new Matrix(this->rows, rhs.columns);
+	for (int i = 0; i < result->rows; i++)
 	{
-		rows = 0;
-		columns = 0;
-		matrix = nullptr;
-		return *this;
-	}
-	result = new Matrix(rows, rhs->get_columns());
-	for (int i = 0; i < rows - 1; ++i)
-	{
-		for (int j = 0; j < rhs->get_columns() - 1; ++j)
+		for (int j = 0; j < result->columns; j++)
 		{
 			sum = 0;
-			for (int k = 0; k < rhs->get_rows() - 1; ++k)
+			for (int k = 0; k < this->columns; k++)
 			{
-				sum+= matrix[i][k] * rhs->get_element(k,j);
+				sum += this->matrix[i][k]*rhs.matrix[k][j];
 			}
+			result->matrix[i][j]= sum;
+		}
+	}
+	delete old;
+	return *result;
+}
 
-			result->set_element(i,j,sum);
+Matrix & Matrix::operator*(const Matrix &rhs)
+{
+	double sum;
+	Matrix *result;
+	result = new Matrix(this->rows, rhs.columns);
+	for (int i = 0; i < result->rows; i++)
+	{
+		for (int j = 0; j < result->columns; j++)
+		{
+			sum = 0;
+			for (int k = 0; k < this->columns; k++)
+			{
+				sum += this->matrix[i][k] * rhs.matrix[k][j];
+			}
+			result->matrix[i][j] = sum;
 		}
 	}
 	return *result;

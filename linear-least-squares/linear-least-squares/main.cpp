@@ -1,30 +1,7 @@
 #include "Matrix.h"
 #include <assert.h>
 #define DEBUG
-Matrix * Mult(Matrix *lhs, Matrix *rhs)
-{
-	double sum;
-	Matrix *result;
-	if (lhs->get_columns() != rhs->get_rows())
-	{
-		result = new Matrix();
-		return result;
-	}
-	result = new Matrix(lhs->get_rows(), rhs->get_columns());
-	for (int i = 0; i < result->get_rows(); i++)
-	{
-		for (int j = 0; j < result->get_columns(); j++)
-		{
-			sum = 0;
-			for (int k = 0; k < lhs->get_columns(); k++)
-			{
-				sum += lhs->get_element(i, k)*rhs->get_element(k, j);
-			}
-			result->set_element(i, j, sum);
-		}
-	}
-	return result;
-}
+
 Matrix * construct_normal(Matrix *, Matrix *);
 void print_solution(Matrix *);
 int main(void)
@@ -50,26 +27,28 @@ int main(void)
 	X->display();
 	XT = X->Trans();
 	cout << "X transpose X:" << endl;
-	XTX =Mult(XT, X);
+	XTX = new Matrix();
+	*XTX =(*XT)*(*X);
 	XTX->display();
 	cout << "X transpose y:" << endl;
-	XTy = Mult(XT, y);	
+	XTy = new Matrix();
+	*XTy =(*XT)*(*y);	
 	XTy->display();
 	normal = construct_normal(XTX, XTy);
 	cout << "Normal Equations: " << endl;
 	normal->display();
 	cout << "rref Normal system: " << endl;
-	normal->rref();
+	solution=normal->rref();
 
-	normal->display();
-	print_solution(normal);
+	solution->display();
+	print_solution(solution);
 	delete X;
 	delete XT;
 	delete XTX;
 	delete y;
 	delete XTy;
 	delete normal;
-//	delete solution;
+	delete solution;
 	cin.get();
 	cin.get();
 	return 0;
