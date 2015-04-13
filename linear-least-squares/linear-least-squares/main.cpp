@@ -1,5 +1,8 @@
-#include "Matrix.h"
+#include <iostream>
 #include <assert.h>
+#include "Matrix.h"
+using namespace std;
+
 #define DEBUG
 
 Matrix * construct_normal(Matrix *, Matrix *);
