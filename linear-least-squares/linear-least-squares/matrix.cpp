@@ -221,3 +221,18 @@ void Matrix::row_multiply_add(int i, int j, double s)
 		for (int k = 0; k < columns; k++)
 			matrix[j][k] += s*matrix[i][k];
 }
+
+bool Matrix::is_empty()
+{
+	if (rows == 0 || columns == 0)
+		return true;
+	return false;
+}
+
+bool Matrix::is_square()
+{
+	if (rows == columns)
+		return true;
+	return false;
+}
+
