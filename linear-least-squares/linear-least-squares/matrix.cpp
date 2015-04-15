@@ -236,3 +236,34 @@ bool Matrix::is_square()
 	return false;
 }
 
+Matrix & Matrix::operator+=(const Matrix &rhs)
+{
+	if (rows != rhs.rows || columns != rhs.columns)
+	{
+		for (int i = 0; i < rows; i++)
+			delete[] matrix[i];
+		delete[] matrix;
+		rows = 0;
+		columns = 0;
+		return *this;
+	}
+	for (int i = 0; i < rows; i++)
+		for (int j = 0; j < columns; j++)
+			matrix[i][j] += rhs.matrix[i][j];
+	return *this;
+}
+
+Matrix & Matrix::operator+(const Matrix &rhs)
+{
+	Matrix *result;
+	
+	if (rows != rhs.rows || columns != rhs.columns)
+	{
+		result = new Matrix();
+		return *result;
+	}
+	result = new Matrix(rows, columns);
+	for (int i = 0; i < rows; i++)
+		for (int j = 0; j < columns; j++)
+			(*result).matrix[i][j] = matrix[i][j] + rhs.matrix[i][j];
+}
