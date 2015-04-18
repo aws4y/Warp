@@ -267,3 +267,24 @@ Matrix & Matrix::operator+(const Matrix &rhs)
 		for (int j = 0; j < columns; j++)
 			(*result).matrix[i][j] = matrix[i][j] + rhs.matrix[i][j];
 }
+
+Matrix * Matrix::LUSolve(Matrix *vec)
+{
+	if (rows != columns)
+	{
+		cout << "Coefficent Matrix is not square, cannot LUSolve." << endl;
+		return new Matrix();
+	}
+}
+
+void Matrix::LU(Matrix *L, Matrix *U)
+{
+	if (rows != columns)
+	{
+		cout << "Matrix is not square cannot perform LU Decompisition." << endl; 
+		L = new Matrix();
+		U = new Matrix();
+		return;
+	}
+
+}

@@ -29,7 +29,9 @@ public:
 	bool is_square(); //check the matrix is nxn or not
 	bool is_empty(); //if the matrix is empty with 0 rows or 0 columns
 	void row_scalar(int i, double s); //multiply a row of a matrix by a scalar
-	void row_multiply_add(int i, int j, double s); //muliply a row by a scalar and add it to another row. 
+	void row_multiply_add(int i, int j, double s); //muliply a row by a scalar and add it to another row. id 
+	Matrix * LUSolve(Matrix *);
+	void LU(Matrix *, Matrix*);
 	//matrix operators
 	Matrix & operator=(const Matrix &);
 	Matrix & operator*= (const Matrix &);   
