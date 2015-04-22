@@ -289,11 +289,13 @@ Matrix * Matrix::LUSolve(Matrix *vec)
 
 }
 
-void Matrix::LU(Matrix *L, Matrix *U)
+void Matrix::LU(Matrix *&L, Matrix *&U)
 {
-	delete L;
-	delete U;
-	Matrix *copy;
+	if (L!=nullptr)
+		delete L;
+	if (U!=nullptr)
+		delete U;
+	Matrix *copy=new Matrix();
 	if (rows != columns)
 	{
 		cout << "Matrix is not square cannot perform LU Decompisition." << endl; 
@@ -304,20 +306,20 @@ void Matrix::LU(Matrix *L, Matrix *U)
 
 	L = new Matrix(rows, columns);
 	U = new Matrix(rows, columns);
-	copy = new Matrix(*this);
+	(*copy) = (*this);
 	int n = rows;
 	for (int k = 0; k < n; k++)
 	{
-		(*U).matrix[k][k] = matrix[k][k];
-		for (int i = k + 1; i < n; i++)
+		(*U).matrix[k][k] = (*copy).matrix[k][k];
+		for (int i = k ; i < n; i++)
 		{
 			(*L).matrix[i][k] = (*copy).matrix[i][k] / (*U).matrix[k][k];
 			(*U).matrix[k][i] = (*copy).matrix[k][i];
 		}
-		for (int i = k + 1; i < n; i++)
-			for (int j = k + 1; j < n; j++)
+		for (int i = k; i < n; i++)
+			for (int j = k; j < n; j++)
 			{
-			(*copy).matrix[i][j] = (*copy).matrix[i][j] - (*L).matrix[i][k] * (*U).matrix[k][j];
+			(*copy).matrix[i][j] -= (*L).matrix[i][k] * (*U).matrix[k][j];
 			}
 	}
 	delete copy;

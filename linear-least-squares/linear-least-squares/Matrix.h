@@ -31,7 +31,7 @@ public:
 	void row_scalar(int i, double s); //multiply a row of a matrix by a scalar
 	void row_multiply_add(int i, int j, double s); //muliply a row by a scalar and add it to another row. id 
 	Matrix * LUSolve(Matrix *);
-	void LU(Matrix *, Matrix*);
+	void LU(Matrix *&, Matrix*&);
 	//matrix operators
 	Matrix & operator=(const Matrix &);
 	Matrix & operator*= (const Matrix &);   
