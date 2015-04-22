@@ -3,6 +3,8 @@
 #include <iomanip>
 #include "Matrix.h"
 
+#define DEBUG
+
 int Matrix::get_rows()
 {
 	return rows;
@@ -220,4 +222,129 @@ void Matrix::row_multiply_add(int i, int j, double s)
 	else
 		for (int k = 0; k < columns; k++)
 			matrix[j][k] += s*matrix[i][k];
+}
+
+bool Matrix::is_empty()
+{
+	if (rows == 0 || columns == 0)
+		return true;
+	return false;
+}
+
+bool Matrix::is_square()
+{
+	if (rows == columns)
+		return true;
+	return false;
+}
+
+Matrix & Matrix::operator+=(const Matrix &rhs)
+{
+	if (rows != rhs.rows || columns != rhs.columns)
+	{
+		for (int i = 0; i < rows; i++)
+			delete[] matrix[i];
+		delete[] matrix;
+		rows = 0;
+		columns = 0;
+		return *this;
+	}
+	for (int i = 0; i < rows; i++)
+		for (int j = 0; j < columns; j++)
+			matrix[i][j] += rhs.matrix[i][j];
+	return *this;
+}
+
+Matrix & Matrix::operator+(const Matrix &rhs)
+{
+	Matrix *result;
+	
+	if (rows != rhs.rows || columns != rhs.columns)
+	{
+		result = new Matrix();
+		return *result;
+	}
+	result = new Matrix(rows, columns);
+	for (int i = 0; i < rows; i++)
+		for (int j = 0; j < columns; j++)
+			(*result).matrix[i][j] = matrix[i][j] + rhs.matrix[i][j];
+	return *result;
+}
+
+Matrix * Matrix::LUSolve(Matrix *vec)
+{
+	Matrix *ans;
+	Matrix *L;
+	Matrix *U;
+	if (rows != columns)
+	{
+		cout << "Coefficent Matrix is not square, cannot LUSolve." << endl;
+		return new Matrix();
+	}
+	ans = new Matrix(rows, 1);
+	this->LU(L, U);
+	delete L;
+	delete U;
+	return ans;
+
+}
+
+void Matrix::LU(Matrix *L, Matrix *U)
+{
+	delete L;
+	delete U;
+	Matrix *copy;
+	if (rows != columns)
+	{
+		cout << "Matrix is not square cannot perform LU Decompisition." << endl; 
+		L = new Matrix();
+		U = new Matrix();
+		return;
+	}
+
+	L = new Matrix(rows, columns);
+	U = new Matrix(rows, columns);
+	copy = new Matrix(*this);
+	int n = rows;
+	for (int k = 0; k < n; k++)
+	{
+		(*U).matrix[k][k] = matrix[k][k];
+		for (int i = k + 1; i < n; i++)
+		{
+			(*L).matrix[i][k] = (*copy).matrix[i][k] / (*U).matrix[k][k];
+			(*U).matrix[k][i] = (*copy).matrix[k][i];
+		}
+		for (int i = k + 1; i < n; i++)
+			for (int j = k + 1; j < n; j++)
+			{
+			(*copy).matrix[i][j] = (*copy).matrix[i][j] - (*L).matrix[i][k] * (*U).matrix[k][j];
+			}
+	}
+	delete copy;
+}
+
+double Matrix::Det()
+{
+	Matrix *L=nullptr;
+	Matrix *U=nullptr;
+	double ldet = 1.0;
+	double udet = 1.0;
+		if (rows != columns)
+		{
+		cout << "Matrix is not square, determinant does not exist!" << endl;
+		return 0.0;
+		}
+	this->LU(L, U);
+#ifdef DEBUG
+	cout<<"L:"<<endl;
+	L->display();
+	cout << "U: " << endl;
+	U->display();
+#endif
+	for (int i = 0; i < rows; i++)
+	{
+		ldet *= L->matrix[i][i];
+		udet *= U->matrix[i][i];
+	}
+	return ldet*udet;
 }
