@@ -22,7 +22,7 @@ public:
 	//matrix specific functions
 	Matrix * Trans();
 	Matrix *rref();    //produces the reduced row echelon form of a matrix 
-	Matrix * Det();    //produces the determinant of a matrix
+	double Det();    //produces the determinant of a matrix
 	Matrix * Inv();    //produces the inverse of a matrix null if the matrix is not invertable 
 	Matrix *ref();     //produces the row echelon form of a matrix
 	void swap_rows(int i, int j);  //swap two rows of a matrix 

@@ -33,6 +33,7 @@ int main(void)
 	XTX = new Matrix();
 	(*XTX) =((*XT)*(*X));
 	XTX->display();
+	cout << "Determinant XTX: " << XTX->Det() << endl;
 	cout << "X transpose y:" << endl;
 	XTy = new Matrix();
 	*XTy =(*XT)*(*y);	
