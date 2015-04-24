@@ -53,7 +53,8 @@ int main(void)
 	delete XTy;
 	delete normal;
 	delete solution;
-	cin.get();
+	cout << "Press Enter to continue..." << endl;
+	cin.ignore();
 	cin.get();
 	return 0;
 }
