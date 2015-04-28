@@ -13,8 +13,9 @@ private:
 	int count;
 	point *points;
 public:
-	Poinset();
+	Pointset();
 	Pointset(int);
+	Pointset(int, double[][]);
 	Pointset(Pointset &);
 	int get_count();
 };
