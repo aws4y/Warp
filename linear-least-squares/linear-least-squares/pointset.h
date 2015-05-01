@@ -15,7 +15,7 @@ private:
 public:
 	Pointset();
 	Pointset(int);
-	Pointset(int, double[][]);
+	Pointset(int, double*,double* );
 	Pointset(Pointset &);
 	int get_count();
 };

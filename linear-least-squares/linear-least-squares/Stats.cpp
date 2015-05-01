@@ -18,5 +18,7 @@ double SST(const double *data, double mu, unsigned int N)
 double SSE(const double *poly, const double *x_i, double mu, unsigned int N, unsigned int k)
 {
 	double sse = 0.0;
+	//include this code eventually
+	return sse;
 }
 

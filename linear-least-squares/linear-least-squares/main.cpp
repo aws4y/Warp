@@ -1,6 +1,9 @@
 #include <iostream>
 #include <assert.h>
 #include "Matrix.h"
+#include "poly.h"
+#include "Stats.h"
+#include "pointset.h"
 using namespace std;
 
 #define DEBUG

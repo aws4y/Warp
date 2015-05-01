@@ -1,14 +1,28 @@
-﻿Build started 4/23/2015 5:52:23 PM.
-     1>Project "C:\Users\Phoenix3-vm\Documents\GitHub\Warp\linear-least-squares\linear-least-squares\linear-least-squares.vcxproj" on node 2 (Build target(s)).
+﻿Build started 5/1/2015 10:15:58 AM.
+     1>Project "C:\Users\aws4y\Documents\GitHub\Warp\linear-least-squares\linear-least-squares\linear-least-squares.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp poly.cpp
+         poly.cpp
+     1>c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\poly.cpp(14): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\poly.cpp(22): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\poly.cpp(28): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\poly.cpp(29): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\poly.cpp(30): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\poly.cpp(47): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\poly.cpp(49): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\poly.cpp(67): warning C4018: '<' : signed/unsigned mismatch
+         Generating Code...
+         Compiling...
          main.cpp
+         Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Phoenix3-vm\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Phoenix3-vm\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Phoenix3-vm\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.lib" /MACHINE:X86 Debug\main.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\aws4y\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\aws4y\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\aws4y\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.lib" /MACHINE:X86 Debug\main.obj
          Debug\matrix.obj
-         linear-least-squares.vcxproj -> C:\Users\Phoenix3-vm\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.exe
-     1>Done Building Project "C:\Users\Phoenix3-vm\Documents\GitHub\Warp\linear-least-squares\linear-least-squares\linear-least-squares.vcxproj" (Build target(s)).
+         Debug\poly.obj
+         Debug\Stats.obj
+         linear-least-squares.vcxproj -> C:\Users\aws4y\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.exe
+     1>Done Building Project "C:\Users\aws4y\Documents\GitHub\Warp\linear-least-squares\linear-least-squares\linear-least-squares.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.67
+Time Elapsed 00:00:00.85
