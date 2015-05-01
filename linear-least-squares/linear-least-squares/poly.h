@@ -1,6 +1,15 @@
 #ifndef POLY_H
 #define POLY_H 
 
+double n_pow(double b, unsigned int N)
+{
+	 
+	double ans = 1;
+	for (int i = 0; i < N; i++)
+		ans *= b;
+	return ans;
+}
+
 class Poly
 {
 private:

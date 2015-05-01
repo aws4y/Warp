@@ -20,10 +20,3 @@ double SSE(const double *poly, const double *x_i, double mu, unsigned int N, uns
 	double sse = 0.0;
 }
 
-double n_pow(double b, unsigned int N)
-{
-	double ans=1;
-	for (int i = 0; i < N; i++)
-		ans *= b;
-	return ans;
-}
