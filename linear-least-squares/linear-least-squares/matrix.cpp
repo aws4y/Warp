@@ -4,6 +4,9 @@
 #include "Matrix.h"
 
 #define DEBUG
+#ifndef _MSC_VER
+#define nullptr 0x0
+#endif
 
 int Matrix::get_rows()
 {

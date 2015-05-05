@@ -1,4 +1,8 @@
 #include "Stats.h"
+#include "poly.h"
+#ifndef _MSC_VER
+#define nullptr 0x0
+#endif
 double mean(double *data, unsigned int N)
 {
 	double mu = 0.0;

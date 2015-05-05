@@ -6,6 +6,10 @@
 #include "pointset.h"
 using namespace std;
 
+#ifndef _MSC_VER
+#define nullptr 0x0
+#endif
+
 #define DEBUG
 
 Matrix * construct_normal(Matrix *, Matrix *);
