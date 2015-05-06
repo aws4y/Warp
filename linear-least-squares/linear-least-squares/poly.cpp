@@ -1,5 +1,14 @@
 #include <assert.h>
+#include <iostream>
+
 #include"poly.h"
+
+using namespace std;
+
+#ifndef _MSC_VER
+#define nullptr 0x0
+#endif
+#define DEBUG
 
 Poly::Poly()
 {
@@ -10,37 +19,42 @@ Poly::Poly()
 Poly::Poly(unsigned int deg)
 {
 	d = deg;
-	coeff = new double[d];
-	for (int i = 0; i < d; i++)
+	coeff = new double[d+1];
+	for (int i = 0; i < d+1; i++)
 		coeff[i] = 0.0;
 }
 
 Poly::Poly(unsigned int deg, double *c)
 {
 	d = deg;
-	coeff = new double[d];
-	for (int i = 0; i < d; i++)
-		coeff[i] = c[i];
+	coeff = new double[d+1];
+	for (int i = 0; i < d+1; i++)
+        {
+		coeff[i] = c[i];                  
+        }
 }
 
 double Poly::val(const double x)
 {
-	int sum = 0.0;
-	for (int i = 0; i < d; i++)
-		sum += coeff[i] * n_pow(x, i);
+	double sum = 0.0;
+	for (int i =0; i <d+1 ; i++)
+        {     
+            
+		sum += coeff[i] * n_pow(x, d-i);
+        }
 	return sum;
 }
 
 double Poly::get_coeff(unsigned int i)
 {
-	if (i > d)
+	if (i > d+1)
 		return 0.0;
 	return coeff[i];
 }
 
 void Poly::set_coeff(const double c, unsigned int i)
 {
-	if (i > d)
+	if (i > d+1)
 	{
 		double *new_coeff;
 		new_coeff = new double[i];
@@ -61,7 +75,7 @@ double n_pow(double b, unsigned int N)
 {
 
 	double ans = 1.0;
-	if (N = 0)
+	if (N == 0)
 		return 1.0;
 
 	for (int i = 0; i < N; i++)

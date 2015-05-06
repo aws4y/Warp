@@ -19,6 +19,7 @@
       <itemPath>../linear-least-squares/linear-least-squares/Stats.cpp</itemPath>
       <itemPath>../linear-least-squares/linear-least-squares/main.cpp</itemPath>
       <itemPath>../linear-least-squares/linear-least-squares/matrix.cpp</itemPath>
+      <itemPath>../linear-least-squares/linear-least-squares/poly.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -70,6 +71,11 @@
       <item path="../linear-least-squares/linear-least-squares/pointset.h"
             ex="false"
             tool="3"
+            flavor2="0">
+      </item>
+      <item path="../linear-least-squares/linear-least-squares/poly.cpp"
+            ex="false"
+            tool="1"
             flavor2="0">
       </item>
       <item path="../linear-least-squares/linear-least-squares/poly.h"
@@ -126,6 +132,11 @@
       <item path="../linear-least-squares/linear-least-squares/pointset.h"
             ex="false"
             tool="3"
+            flavor2="0">
+      </item>
+      <item path="../linear-least-squares/linear-least-squares/poly.cpp"
+            ex="false"
+            tool="1"
             flavor2="0">
       </item>
       <item path="../linear-least-squares/linear-least-squares/poly.h"

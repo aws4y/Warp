@@ -8,9 +8,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/aws4y/github/Warp/linear-least-squares/linear-least-squares/matrix.cpp</file>
+            <file>file:/home/aws4y/github/Warp/linear-least-squares/linear-least-squares/Matrix.h</file>
             <file>file:/home/aws4y/github/Warp/linear-least-squares/linear-least-squares/pointset.h</file>
             <file>file:/home/aws4y/github/Warp/linear-least-squares/linear-least-squares/Stats.cpp</file>
+            <file>file:/home/aws4y/github/Warp/linear-least-squares/linear-least-squares/poly.cpp</file>
             <file>file:/home/aws4y/github/Warp/linear-least-squares/linear-least-squares/main.cpp</file>
+            <file>file:/home/aws4y/github/Warp/linear-least-squares/linear-least-squares/poly.h</file>
         </group>
     </open-files>
 </project-private>
