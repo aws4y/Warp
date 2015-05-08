@@ -79,6 +79,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matrix.cpp" />
+    <ClCompile Include="pointset.cpp" />
     <ClCompile Include="poly.cpp" />
     <ClCompile Include="Stats.cpp" />
   </ItemGroup>

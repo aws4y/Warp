@@ -1,5 +1,8 @@
 #ifndef STATS_H
 #define STATS_H
-double mean(const double *, unsigned int N);
+#include "poly.h"
 
+double mean(const double *, unsigned int N);
+double SST(const double *data, double mu, unsigned int N);
+double SSE(const Poly *poly, const double *x_i, double mu, unsigned int N);
 #endif
