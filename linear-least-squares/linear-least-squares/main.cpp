@@ -1,5 +1,6 @@
 #include <iostream>
 #include <assert.h>
+#include <math.h>
 #include "Matrix.h"
 #include "poly.h"
 #include "Stats.h"
@@ -46,24 +47,35 @@ int main(void)
 	*XTy =(*XT)*(*y);	
 	XTy->display();
 	normal = construct_normal(XTX, XTy);
+        if(normal!=nullptr)
+        {
 	cout << "Normal Equations: " << endl;
 	normal->display();
 	cout << "rref Normal system: " << endl;
 	solution=normal->rref();
-
 	solution->display();
 	print_solution(solution);
+        }
+        else 
+        {
+            solution=nullptr;
+            cout<<"There is no solution."<<endl<<endl;
+        }
 	delete X;
 	delete XT;
 	delete XTX;
 	delete y;
 	delete XTy;
-	delete normal;
-	delete solution;
-        double array[5]={1.0,2.0,3.0,4.0};
+        if(normal != nullptr)
+        {
+            delete normal;
+            delete solution;
+        }
+       
+        double array[5]={1.0,0,0,0,-1.0};
         Poly *test;
-        test=new Poly(3,array);
-        cout<<test->val(4.5)<<endl;
+        test=new Poly(4,array);
+        cout<<test->val(2.0)<<endl;
 	cout << "Press Enter to continue..." << endl;
 	delete test;
         cin.ignore();
@@ -74,6 +86,10 @@ int main(void)
 Matrix * construct_normal(Matrix *XTX, Matrix *XTy)
 {
 	Matrix *normal;
+        if(XTX->Det()==0.0 || isnan(XTX->Det()))
+        {
+            return nullptr;
+        }
 	normal = new Matrix(XTX->get_rows(), XTX->get_columns() + 1);
 	for (int i = 0; i < XTX->get_rows(); i++)
 		for (int j = 0; j < XTX->get_columns(); j++)

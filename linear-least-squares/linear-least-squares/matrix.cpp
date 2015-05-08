@@ -1,9 +1,10 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 #include "Matrix.h"
 
-#define DEBUG
+
 #ifndef _MSC_VER
 #define nullptr 0x0
 #endif
@@ -350,6 +351,8 @@ double Matrix::Det()
 	{
 		ldet *= L->matrix[i][i];
 		udet *= U->matrix[i][i];
+                if(isnan(ldet)||isnan(udet))
+                    return 0.0;
 	}
 	return ldet*udet;
 }
