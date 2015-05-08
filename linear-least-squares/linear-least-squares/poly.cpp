@@ -39,8 +39,7 @@ double Poly::val(const double x)
 	double sum = 0.0;
 	for (int i =0; i <d+1 ; i++)
         {     
-            
-		sum += coeff[i] * n_pow(x, d-i);
+		sum= sum*x +coeff[i];
         }
 	return sum;
 }
