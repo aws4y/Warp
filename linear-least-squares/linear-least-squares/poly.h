@@ -12,6 +12,7 @@ public:
 	Poly();
 	Poly(unsigned int);
 	Poly(unsigned int, double *);
+        Poly(const Poly &);
 	double val(const double x);
         ~Poly();
 	void set_coeff(const double, unsigned int);

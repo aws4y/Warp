@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/1338900640/Stats.o \
 	${OBJECTDIR}/_ext/1338900640/main.o \
 	${OBJECTDIR}/_ext/1338900640/matrix.o \
+	${OBJECTDIR}/_ext/1338900640/pointset.o \
 	${OBJECTDIR}/_ext/1338900640/poly.o
 
 
@@ -79,6 +80,11 @@ ${OBJECTDIR}/_ext/1338900640/matrix.o: ../linear-least-squares/linear-least-squa
 	${MKDIR} -p ${OBJECTDIR}/_ext/1338900640
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1338900640/matrix.o ../linear-least-squares/linear-least-squares/matrix.cpp
+
+${OBJECTDIR}/_ext/1338900640/pointset.o: ../linear-least-squares/linear-least-squares/pointset.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1338900640
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1338900640/pointset.o ../linear-least-squares/linear-least-squares/pointset.cpp
 
 ${OBJECTDIR}/_ext/1338900640/poly.o: ../linear-least-squares/linear-least-squares/poly.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1338900640

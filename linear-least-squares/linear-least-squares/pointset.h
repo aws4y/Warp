@@ -1,3 +1,8 @@
+
+/*
+ * The purpose of this class is to contain a pointset and int polynomial regression.  
+ * 
+ */
 #ifndef POINT_SET
 #define POINT_SET
 
@@ -24,6 +29,7 @@ public:
 	Pointset(int, double*,double* );
 	Pointset(Pointset &);
 	int get_count();
+        void build_model(unsigned int); 
 };
 
 #endif
