@@ -17,7 +17,6 @@ void print_solution(Matrix *);
 int main(void)
 {
 	int n, N;
-	/*
         Matrix *X;
 	Matrix *XT;
 	Matrix *XTX;
@@ -61,13 +60,13 @@ int main(void)
 	delete XTy;
 	delete normal;
 	delete solution;
-         */
         double array[5]={1.0,2.0,3.0,4.0};
         Poly *test;
         test=new Poly(3,array);
         cout<<test->val(4.5)<<endl;
 	cout << "Press Enter to continue..." << endl;
-	cin.ignore();
+	delete test;
+        cin.ignore();
 	cin.get();
 	return 0;
 }

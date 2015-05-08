@@ -82,3 +82,8 @@ double n_pow(double b, unsigned int N)
 		ans *= b;
 	return ans;
 }
+
+Poly::~Poly()
+{
+    delete coeff;
+}
