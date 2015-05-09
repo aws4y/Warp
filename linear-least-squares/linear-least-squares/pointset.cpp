@@ -41,7 +41,14 @@ Pointset::Pointset(Pointset& orig)
     x_mu=orig.x_mu;
     y_mu=orig.y_mu;
     if(orig.model!=nullptr)
-     model=new Poly(orig.model);
+     model=new Poly(*orig.model);
+    else 
+        model=orig.model;
     r_squared=orig.r_squared;
-    
+    points=new point[count];
+    for(int i=0; i<count; i++)
+    {
+        points[i].x=orig.points[i].x;
+        points[i].y=orig.points[i].y;
+    }
 }

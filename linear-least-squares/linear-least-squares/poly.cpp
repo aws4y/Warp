@@ -86,3 +86,11 @@ Poly::~Poly()
 {
     delete coeff;
 }
+
+Poly::Poly(const Poly& o)
+{
+    d=o.d;
+    coeff=new double[d+1];
+    for(int i=0;i<d+1;i++)
+        coeff[i]=o.coeff[i];
+}
