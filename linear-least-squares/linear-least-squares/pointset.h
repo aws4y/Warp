@@ -17,11 +17,12 @@ typedef struct
 class Pointset
 {
 private:
-	int count;
+	unsigned int count;
 	point *points;
 	double x_mu;
 	double y_mu;
 	double r_squared;
+        double r;
 	Poly *model;
 public:
 	Pointset();
@@ -29,7 +30,10 @@ public:
 	Pointset(int, double*,double* );
 	Pointset(Pointset &);
 	int get_count();
-        void build_model(unsigned int); 
+        void build_model();
+        double * X();
+        double * Y();
+        void print();
 };
 
 #endif

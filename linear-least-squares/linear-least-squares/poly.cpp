@@ -1,7 +1,7 @@
 #include <assert.h>
 #include <iostream>
 
-#include"poly.h"
+#include "poly.h"
 
 using namespace std;
 
@@ -93,4 +93,14 @@ Poly::Poly(const Poly& o)
     coeff=new double[d+1];
     for(int i=0;i<d+1;i++)
         coeff[i]=o.coeff[i];
+}
+
+void Poly::print()
+{
+    cout<<"Degree: "<<d<<endl;
+    cout<<"Coefficients:"<<endl;
+    for(int i=0;i<d+1;i++)
+    {
+        cout<<"a_"<<d-i<<": "<<coeff[i]<<endl;
+    }
 }

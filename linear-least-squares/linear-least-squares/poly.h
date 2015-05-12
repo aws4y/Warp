@@ -17,6 +17,7 @@ public:
         ~Poly();
 	void set_coeff(const double, unsigned int);
 	double get_coeff(unsigned int);
+        void print();
 };
 
 #endif

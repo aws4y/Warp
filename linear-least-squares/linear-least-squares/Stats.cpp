@@ -9,7 +9,7 @@ using namespace std;
 #define nullptr 0x0
 #endif
 
-double mean(double *data, unsigned int N)
+double mean(const double *data, unsigned int N)
 {
 	double mu = 0.0;
 	for (unsigned int i = 0; i < N; i++)
@@ -25,7 +25,7 @@ double SST(const double *data, double mu, unsigned int N)
 	return sst;
 }
 
-double SSE(Poly *poly, const double *x_i, double mu, unsigned int N)
+double SSE( Poly *poly, const double *x_i, double mu, unsigned int N)
 {
 	double sse = 0.0;
 	for (unsigned int i = 0; i < N; i++)
