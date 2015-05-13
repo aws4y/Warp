@@ -22,8 +22,18 @@ int main(void) {
     input.open("data.dat");
     if(!input.is_open()){
         cout<<"File not found is file in: ";
+#ifndef _MSC_VER
         system("pwd");
+#endif
+#ifdef _MSC_VER
+		system("echo %cd%");
+#endif
         cout<<"?"<<endl;
+		cout << "Press Enter to continue..." << endl;
+		if (cin.peek() == EOF)
+			cin.ignore();
+		cin.get();
+		return 0;
     }
     double *x;
     double *y; 
@@ -48,11 +58,12 @@ int main(void) {
     data=new Pointset(count,x,y);
     data->build_model();
     data->print();
-    cout << "Press Enter to continue..." << endl;
+    
  
     delete data;
     input.close();
-    if (cin.peek() == EOF)
+	cout << "Press Enter to continue..." << endl;
+    if (cin.peek() != EOF)
         cin.ignore();
     cin.get();
     return 0;
