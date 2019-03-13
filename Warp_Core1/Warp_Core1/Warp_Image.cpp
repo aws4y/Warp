@@ -41,6 +41,12 @@ template <typename T> void WarpImage<T>::appendMetadata(string meta_string)
 	metadata->push_back(meta_string);
 }
 
+template<typename VTYPE>
+char * WarpImage<VTYPE>::getFile_name()
+{
+	return nullptr;
+}
+
 template <typename T> void WarpImage<T>::setRA(int H, int M, float S)
 {
 	RA.d = H;
