@@ -1,17 +1,21 @@
-﻿Build started 5/12/2015 10:37:31 PM.
-     1>Project "C:\Users\Aaron\Documents\GitHub\Warp\linear-least-squares\linear-least-squares\linear-least-squares.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Aaron\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Aaron\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Aaron\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.lib" /MACHINE:X86 Debug\main.obj
-         Debug\matrix.obj
-         Debug\pointset.obj
-         Debug\poly.obj
-         Debug\Stats.obj
-         linear-least-squares.vcxproj -> C:\Users\Aaron\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.exe
-     1>Done Building Project "C:\Users\Aaron\Documents\GitHub\Warp\linear-least-squares\linear-least-squares\linear-least-squares.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.98
+﻿  main.cpp
+  matrix.cpp
+  pointset.cpp
+c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\pointset.cpp(32): warning C4018: '<': signed/unsigned mismatch
+c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\pointset.cpp(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\pointset.cpp(86): warning C4018: '<': signed/unsigned mismatch
+c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\pointset.cpp(165): warning C4018: '<': signed/unsigned mismatch
+c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\pointset.cpp(187): warning C4018: '<': signed/unsigned mismatch
+c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\pointset.cpp(196): warning C4018: '<': signed/unsigned mismatch
+  poly.cpp
+c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\poly.cpp(23): warning C4018: '<': signed/unsigned mismatch
+c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\poly.cpp(31): warning C4018: '<': signed/unsigned mismatch
+c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\poly.cpp(40): warning C4018: '<': signed/unsigned mismatch
+c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\poly.cpp(60): warning C4018: '<': signed/unsigned mismatch
+c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\poly.cpp(62): warning C4018: '<': signed/unsigned mismatch
+c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\poly.cpp(80): warning C4018: '<': signed/unsigned mismatch
+c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\poly.cpp(94): warning C4018: '<': signed/unsigned mismatch
+c:\users\aws4y\documents\github\warp\linear-least-squares\linear-least-squares\poly.cpp(102): warning C4018: '<': signed/unsigned mismatch
+  Stats.cpp
+  Generating Code...
+  linear-least-squares.vcxproj -> C:\Users\aws4y\Documents\GitHub\Warp\linear-least-squares\Debug\linear-least-squares.exe

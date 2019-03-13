@@ -57,6 +57,11 @@ Pointset::Pointset(Pointset& orig)
     }
 }
 
+int Pointset::get_count()
+{
+	return count;
+}
+
 void Pointset::build_model()
 {
     	int d;
