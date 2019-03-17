@@ -2,9 +2,9 @@
 
 namespace warp5
 {
-    public class Warp
+    public class Warp<T>
     {
-        WarpImage[] stack;
+        WarpImage<T>[] stack;
 
     }
 }

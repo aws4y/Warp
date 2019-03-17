@@ -35,5 +35,19 @@ namespace warp5
             raType = uRaType;
             sec = 0.0;
         }
+        public Coord(int uDeg, int uMin, double uSec ,bool uRaType)
+        {
+            if (uRaType)
+            {
+                hr = uDeg;
+            }
+            else
+            {
+                deg = uDeg;
+            }
+            min = uMin;
+            raType = uRaType;
+            sec = uSec;
+        }
     }
 }

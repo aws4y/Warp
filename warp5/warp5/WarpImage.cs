@@ -12,6 +12,17 @@ namespace warp5
         private uint height;    //image height
         private string oName;   //object name
         private string notes;   //fits notes
-        private T[][] data;     //image data
+        private T[,] data;     //image data
+
+        public WarpImage()
+        {
+            RA = new Coord();
+            DEC = new Coord();
+            width = 0;
+            height = 0;
+            oName = "";
+            notes = "";
+            data = new T[1,1];      //1 pixel image
+        }
     }
 }
