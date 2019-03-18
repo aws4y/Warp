@@ -20,8 +20,8 @@ namespace warp5
         {
             RA = new Coord();
             DEC = new Coord();
-            width = 0;
-            height = 0;
+            width = 1;
+            height = 1;
             oName = "";
             notes = "";
             data = new T[1,1];      //1 pixel image
